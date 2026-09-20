@@ -29,3 +29,50 @@ document.querySelectorAll('[data-carousel-target]').forEach((button) => {
     });
   });
 });
+
+// Mantém a atribuição da campanha até o checkout e registra apenas a intenção
+// quando o visitante escolhe um dos dois planos reais de pagamento.
+(() => {
+  const checkoutProducts = {
+    'https://pay.wiapy.com/JVNVCu_cL8Ar': {
+      name: 'Água Sem Energia — Plano Básico',
+      value: 9.90
+    },
+    'https://pay.wiapy.com/-_uk8YovU5V5': {
+      name: 'Água Sem Energia — Plano Completo',
+      value: 27.90
+    }
+  };
+  const acceptedParameters = [
+    'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
+    'src', 'sck', 'fbclid', 'gclid'
+  ];
+  const landingParameters = new URLSearchParams(window.location.search);
+
+  function checkoutUrlWithTracking(baseUrl) {
+    const checkoutUrl = new URL(baseUrl);
+    acceptedParameters.forEach((parameter) => {
+      const value = landingParameters.get(parameter);
+      if (value) checkoutUrl.searchParams.set(parameter, value);
+    });
+    return checkoutUrl.toString();
+  }
+
+  document.querySelectorAll('a[href*="pay.wiapy.com"]').forEach((link) => {
+    const destination = new URL(link.href);
+    const baseUrl = `${destination.origin}${destination.pathname}`;
+    const product = checkoutProducts[baseUrl];
+    if (!product) return;
+
+    link.href = checkoutUrlWithTracking(baseUrl);
+    link.addEventListener('click', () => {
+      if (typeof window.fbq === 'function') {
+        window.fbq('track', 'InitiateCheckout', {
+          content_name: product.name,
+          value: product.value,
+          currency: 'BRL'
+        });
+      }
+    });
+  });
+})();
