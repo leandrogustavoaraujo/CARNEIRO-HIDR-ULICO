@@ -3,6 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (() => {
+      const desktopDestination = new URL('https://apostila-guia-off-grid.lovable.app/');
+      const userAgent = navigator.userAgent || '';
+      const isMobile = navigator.userAgentData?.mobile
+        || /android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent)
+        || (/macintosh/i.test(userAgent) && navigator.maxTouchPoints > 1);
+
+      if (!isMobile) {
+        new URLSearchParams(window.location.search).forEach((value, key) => {
+          desktopDestination.searchParams.append(key, value);
+        });
+        window.location.replace(desktopDestination.toString());
+      }
+    })();
+  </script>
   <meta name="theme-color" content="#0F4438">
   <meta name="description" content="Guia digital para planejar energia solar OFF GRID no sítio ou fazenda, com cálculos passo a passo e três bônus gratuitos.">
   <title>Sítio OFF GRID — Energia Solar para Seu Sítio</title>
