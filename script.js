@@ -34,11 +34,50 @@ document.querySelectorAll('.faq-item button').forEach(button => {
   });
 });
 
-document.querySelectorAll('.purchase-button').forEach(button => {
-  button.addEventListener('click', () => {
-    const message = document.getElementById('checkout-message');
-    message.textContent = 'O checkout deste novo produto ainda não foi configurado. Insira o link correto antes de publicar a página.';
-    message.hidden = false;
-    message.scrollIntoView({behavior:'smooth',block:'nearest'});
+// Preserva a origem da campanha até o pagamento e registra a intenção de compra
+// somente nos dois links que levam ao checkout.
+(() => {
+  const checkoutProducts = {
+    'https://pay.wiapy.com/5S1r_y6eb2mL': {
+      name: 'Sítio OFF GRID — Apostila',
+      value: 9.90
+    },
+    'https://pay.wiapy.com/y5HEBDNZnlfJ': {
+      name: 'Sítio OFF GRID — Plano Completo',
+      value: 27.90
+    }
+  };
+  const acceptedParameters = [
+    'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
+    'src', 'sck', 'fbclid', 'gclid'
+  ];
+  const landingParameters = new URLSearchParams(window.location.search);
+
+  function checkoutUrlWithTracking(baseUrl) {
+    const checkoutUrl = new URL(baseUrl);
+    acceptedParameters.forEach((parameter) => {
+      const value = landingParameters.get(parameter);
+      if (value) checkoutUrl.searchParams.set(parameter, value);
+    });
+    return checkoutUrl.toString();
+  }
+
+  document.querySelectorAll('a[href*="pay.wiapy.com"]').forEach((link) => {
+    const destination = new URL(link.href);
+    const baseUrl = `${destination.origin}${destination.pathname}`;
+    const product = checkoutProducts[baseUrl];
+    if (!product) return;
+
+    link.href = checkoutUrlWithTracking(baseUrl);
+    link.addEventListener('click', () => {
+      if (typeof window.fbq === 'function') {
+        window.fbq('track', 'InitiateCheckout', {
+          content_name: product.name,
+          value: product.value,
+          currency: 'BRL'
+        });
+      }
+    });
   });
-});
+})();
+
