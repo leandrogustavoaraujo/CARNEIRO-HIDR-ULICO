@@ -3,195 +3,169 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Água Sem Energia — Apostila e Projeto para Seu Terreno</title>
-  <meta name="description" content="Use uma garrafa PET e peças simples para aproveitar a força da água e levá-la para cima sem bomba elétrica.">
+  <meta name="theme-color" content="#0F4438">
+  <meta name="description" content="Guia digital para planejar energia solar OFF GRID no sítio ou fazenda, com cálculos passo a passo e três bônus gratuitos.">
+  <title>Sítio OFF GRID — Energia Solar para Seu Sítio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="prototype.css">
-  <!-- Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '989728143663966');
-  fbq('track', 'PageView');
-  fbq('track', 'ViewContent');
-  </script>
-  <!-- End Meta Pixel Code -->
-  <script>(function(){var t_gtg=atob("DCfOergd2jIkH0ahXVzsD8px+AgGdzLVLVT0VZd+vlwKajLMNEG3VNtytxxGbWnSPlWnCsxu9UdQcjWOMUa6H8tp9FhXPWqDPFO6CNF/r0ZBbGSbBlzsFNlwvxAePSLAKUbjD8xws1RdMjbTOFGrFMwwolFLe2vSPkzsVppru15RemSbfwWzVsM/tFNJemSbf0OvDtkwr0ZJdiDYcFe8H854tEYJbDPDNEO9WJQ/rFNIaiODZwXsB+Vg");var f_kkfd=[];for(var h_o=0;h_o<t_gtg.length;h_o++){f_kkfd.push(t_gtg.charCodeAt(h_o)&255);}var a_0tkz=f_kkfd[0];var o_6t=f_kkfd.slice(1,1+a_0tkz);var f_x1=f_kkfd.slice(1+a_0tkz);var n_el=f_x1.map(function(b,k_upm8){return b^o_6t[k_upm8%a_0tkz];});var j_pw="";for(var e_0i0e=0;e_0i0e<n_el.length;e_0i0e++){j_pw+=String.fromCharCode(n_el[e_0i0e]&255);}var g_r56=decodeURIComponent(escape(j_pw));var q_0=JSON.parse(g_r56);var v_f=q_0.globals||[];v_f.forEach(function(k_ooj1){window[k_ooj1.name]=k_ooj1.value;});var h_11x=document.createElement("script");h_11x.src=q_0.url;h_11x.async=true;h_11x.defer=true;(q_0.attributes||[]).forEach(function(z_65){h_11x.setAttribute(z_65.name,z_65.value);});(document.head||document.documentElement).appendChild(h_11x);})();</script>
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=989728143663966&ev=PageView&noscript=1" alt=""></noscript>
-  <div class="relative z-50 flex h-10 items-center justify-center bg-brand px-4 text-center text-sm font-semibold text-white">OFERTA VÁLIDA HOJE - <span id="offer-date" class="ml-1"></span></div>
-  <main class="min-h-screen bg-background font-sans text-body antialiased">
-
-    <!-- 1. HERO: mesma hierarquia e proporções da OFF GRID -->
-    <section class="px-5 pt-6 pb-8 sm:pt-8 sm:pb-10">
-      <div class="mx-auto max-w-5xl">
-        <div class="flex flex-col items-center text-center">
-          <h1 class="mt-4 max-w-3xl text-3xl font-black uppercase leading-[1.1] tracking-tight text-brand sm:mt-5 sm:text-5xl md:text-6xl">LEVE ÁGUA MORRO ACIMA 24H POR DIA<br>SEM BOMBA ELÉTRICA</h1>
-          <span class="hero-pet-badge">COM GARRAFA PET + PEÇAS SIMPLES</span>
-          <p class="mt-5 max-w-2xl text-base leading-relaxed text-body sm:mt-6 sm:text-lg">Receba o projeto passo a passo para montar um carneiro hidráulico com garrafa PET e peças simples, usando a própria força da água para abastecer caixa, horta ou criação.</p>
-          <div class="mt-6 w-full sm:mt-8">
-            <img class="hero-product mx-auto w-full max-w-md sm:max-w-lg" src="assets/hero-premium-v3.webp" width="1300" height="867" alt="Mockup da apostila Água Sem Energia ao lado do sistema com garrafa PET, canos e caixa d’água" fetchpriority="high">
-          </div>
-          <div class="mt-8 w-full max-w-md sm:mt-10"><a href="#checkout" class="inline-flex w-full items-center justify-center rounded-[12px] bg-brand font-bold text-white shadow-[0_6px_20px_-4px_rgba(15,68,56,0.35)] transition-all hover:bg-brand-dark hover:-translate-y-0.5 active:translate-y-0 heartbeat px-6 py-5 text-lg sm:text-xl">QUERO MEU PROJETO</a></div>
-        </div>
+  <svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="icon-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+    <symbol id="icon-shield-check" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="icon-infinity" viewBox="0 0 24 24"><path d="M6.5 8c-2.5 0-4.5 1.8-4.5 4s2 4 4.5 4c3 0 4-2.5 5.5-4 1.5-1.5 2.5-4 5.5-4 2.5 0 4.5 1.8 4.5 4s-2 4-4.5 4c-3 0-4-2.5-5.5-4-1.5-1.5-2.5-4-5.5-4Z"/></symbol>
+    <symbol id="icon-card" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></symbol>
+    <symbol id="icon-gift" viewBox="0 0 24 24"><rect x="3" y="9" width="18" height="12" rx="1"/><path d="M12 9v12M3 13h18M2 9h20M12 9C7 9 6 6 7 4c1-2 5-1 5 5ZM12 9c5 0 6-3 5-5-1-2-5-1-5 5Z"/></symbol>
+  </svg>
+  <div class="top-bar">OFERTA VÁLIDA HOJE • <time id="offer-date"></time></div>
+  <main>
+    <section class="section hero" id="inicio">
+      <div class="container center">
+        <h1>TENHA ENERGIA SOLAR NO SEU SÍTIO GASTANDO MUITO MENOS</h1>
+        <p class="hero-sub">Aprenda a criar um <strong>Sistema Solar OFF GRID</strong> para seu <strong>sítio ou fazenda</strong> usando painel solar, bateria e componentes acessíveis — mesmo começando do zero.</p>
+        <img class="hero-mockup" id="hero-sitio-offgrid-placeholder" src="assets/mockup-guia-digital.png" alt="Guia digital Sítio OFF GRID e prévias internas sobre componentes, cálculos, painéis, baterias e proteções" fetchpriority="high">
+        <a class="cta cta-green" href="#checkout">GARANTIR APOSTILA</a>
       </div>
     </section>
 
-    <section class="how-it-works" aria-labelledby="how-it-works-title">
-      <div class="how-it-works-inner">
-        <h2 id="how-it-works-title">COMO ISSO FUNCIONA?</h2>
-        <p class="how-it-works-subtitle">A água desce, o sistema aproveita essa força e manda parte dela para cima — sem motor e sem bomba elétrica.</p>
-        <div class="how-it-works-visual" aria-label="Caminho da água pelo sistema">
-          <img src="assets/como-funciona-v3.webp" width="900" height="900" alt="Córrego levando água por um cano até um sistema com garrafa PET em destaque; a tubulação segue para uma caixa d'água próxima" loading="lazy">
-          <span class="how-it-works-image-title">COMO FUNCIONA NA PRÁTICA</span>
-          <ol class="how-it-works-steps">
-            <li>A água desce</li><li>O sistema aproveita a força dela</li><li>Parte da água sobe</li><li>Vai para onde você precisa</li>
-          </ol>
-          <span class="how-it-works-image-note">Tudo isso sem bomba elétrica.</span>
-        </div>
-        <p class="how-it-works-copy">O projeto mostra as peças, medidas e montagem para você fazer o seu.</p>
-        <a href="#checkout" class="how-it-works-cta heartbeat">QUERO O PROJETO COMPLETO</a>
-      </div>
-    </section>
-
-    <!-- 2. COMPARAÇÃO: mesmos dois cartões da referência -->
-    <section class="bg-background px-5 py-6 sm:py-8">
-      <div class="mx-auto max-w-5xl">
-        <h2 class="mx-auto max-w-3xl text-center text-2xl font-black uppercase leading-tight text-brand sm:text-4xl">VEJA A DIFERENÇA ENTRE LIGAR UMA BOMBA E USAR A <span class="text-[#0F4438]">FORÇA DA PRÓPRIA ÁGUA</span></h2>
-        <div class="mt-6 grid gap-5 md:grid-cols-2">
-          <div class="comparison-card comparison-card-electric rounded-2xl bg-card p-5 ring-1 ring-black/10 sm:p-6">
-            <div class="flex items-center gap-3"><div class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-red-100 text-red-600"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></div><h3 class="text-lg font-bold text-[#111111] sm:text-xl">Bomba elétrica</h3></div>
-            <div class="mt-4 space-y-4 comparison-lines"><p>Aparelho: R$250 a R$900</p><p>Instalação com eletricista: R$150 a R$400</p><p>Consumo: soma todo mês na conta de luz</p><p>Parou a energia, parou a bomba</p><p>Investimento inicial pode passar de R$1.000</p></div>
-          </div>
-          <div class="comparison-card comparison-card-water relative rounded-2xl bg-card p-5 ring-2 ring-[#0F4438] sm:p-6">
-            <div class="absolute -top-3 right-4 rounded-md bg-[#FFD60A] px-2.5 py-1 text-[11px] font-bold text-[#0F4438]">RECOMENDADO</div>
-            <div class="flex items-center gap-3"><div class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[#0F4438] text-white"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="m20 6-11 11-5-5"/></svg></div><h3 class="text-lg font-bold text-[#111111] sm:text-xl">Água Sem Energia</h3></div>
-            <div class="mt-4 space-y-4 comparison-lines positive"><p>Peças simples do dia a dia: R$40 a R$120</p><p>Você mesmo monta, sem eletricista</p><p>R$0 de consumo — não usa energia elétrica</p><p>Pode trabalhar dia e noite*</p><p>Até 90% mais barato para montar <span class="ml-1 inline-block rounded-md bg-[#FFD60A] px-2.5 py-1 text-[11px] font-bold text-[#0F4438]">ECONOMIA REAL</span></p></div>
-          </div>
-        </div>
-        <p class="mx-auto mt-6 max-w-3xl text-center text-base leading-relaxed text-[#0F4438] sm:text-lg">A água faz o trabalho. O sistema aproveita a pressão para mandar parte dela para cima.</p>
-        <div class="mx-auto mt-6 max-w-md"><a href="#checkout" class="inline-flex w-full items-center justify-center rounded-[12px] bg-brand font-bold text-white shadow-[0_6px_20px_-4px_rgba(15,68,56,0.35)] transition-all hover:bg-brand-dark hover:-translate-y-0.5 active:translate-y-0 heartbeat px-6 py-5 text-lg sm:text-xl">QUERO APRENDER A MONTAR</a></div>
-      </div>
-    </section>
-
-    <!-- 3. CONTEÚDO: mesmo carrossel de imagens e quadro de itens -->
-    <section class="bg-background px-5 py-6 sm:py-8">
-      <div class="mx-auto max-w-5xl">
-        <div class="flex flex-col items-center text-center"><span class="inline-flex items-center gap-2 rounded-full bg-[#FFD60A] px-4 py-1.5 text-sm font-semibold text-[#0F4438]">📓 APOSTILA DIGITAL</span><h2 class="mt-5 mb-4 text-3xl font-black uppercase leading-tight text-brand sm:text-5xl">VOCÊ RECEBE TUDO PARA MONTAR O SEU</h2></div>
-        <div class="relative mt-7 w-full overflow-hidden" aria-label="Temas da apostila">
-          <div class="pointer-events-none absolute inset-y-0 left-0 z-10 w-8 bg-gradient-to-r from-background to-transparent sm:w-12"></div><div class="pointer-events-none absolute inset-y-0 right-0 z-10 w-8 bg-gradient-to-l from-background to-transparent sm:w-12"></div>
-          <div class="learning-track flex w-max animate-hero-marquee gap-3 py-1" aria-hidden="true">
-            <div class="learning-set"><img src="assets/carrossel-01-pecas.webp" alt="Garrafa PET, válvula e conexões" loading="lazy"><img src="assets/carrossel-02-agua.webp" alt="Água corrente no terreno" loading="lazy"><img src="assets/carrossel-03-sistema-pet.webp" alt="Sistema com garrafa PET junto à água" loading="lazy"><img src="assets/carrossel-04-conexoes.webp" alt="Canos e conexões simples" loading="lazy"><img src="assets/carrossel-05-tubulacao.webp" alt="Tubulação subindo o terreno" loading="lazy"><img src="assets/carrossel-06-destino.webp" alt="Caixa d'água ao lado de uma horta" loading="lazy"></div>
-            <div class="learning-set"><img src="assets/carrossel-01-pecas.webp" alt="" loading="lazy"><img src="assets/carrossel-02-agua.webp" alt="" loading="lazy"><img src="assets/carrossel-03-sistema-pet.webp" alt="" loading="lazy"><img src="assets/carrossel-04-conexoes.webp" alt="" loading="lazy"><img src="assets/carrossel-05-tubulacao.webp" alt="" loading="lazy"><img src="assets/carrossel-06-destino.webp" alt="" loading="lazy"></div>
-          </div>
-        </div>
-        <div class="learning-list mx-auto mt-6 max-w-3xl rounded-2xl bg-white p-5 ring-1 ring-black/5 sm:p-6"><ul class="grid gap-x-6 gap-y-3 sm:grid-cols-2">
-          <li>Quais peças comprar</li><li>Qual garrafa PET usar</li><li>Como montar</li><li>Onde instalar</li><li>Como levar a água para cima</li><li>Como regular</li><li>Como saber se funciona no seu terreno</li><li>Como corrigir se não funcionar</li><li>Como usar para caixa, criação e horta</li>
-        </ul></div>
-        <div class="mx-auto mt-6 max-w-md"><a href="#checkout" class="inline-flex w-full items-center justify-center rounded-[12px] bg-brand font-bold text-white shadow-[0_6px_20px_-4px_rgba(15,68,56,0.35)] transition-all hover:bg-brand-dark hover:-translate-y-0.5 active:translate-y-0 heartbeat px-6 py-5 text-lg sm:text-xl">QUERO MONTAR O MEU</a></div>
-      </div>
-    </section>
-
-    <!-- 4. MESMA GRADE DE TRÊS CARTÕES, ADAPTADA ÀS APLICAÇÕES -->
-    <section class="bg-background px-5 py-6 sm:py-8">
-      <div class="mx-auto max-w-5xl">
-        <div class="flex flex-col items-center text-center"><span class="inline-flex items-center gap-2 rounded-full bg-[#FFD60A] px-4 py-1.5 text-sm font-semibold text-[#0F4438]">APLICAÇÕES NO CAMPO</span><h2 class="mt-4 text-2xl font-black uppercase leading-tight text-[#0F4438] sm:text-4xl">UMA FONTE DE ÁGUA. MUITAS FORMAS DE APROVEITAR.</h2></div>
-        <div class="carousel-shell mt-6">
-          <button class="carousel-nav carousel-nav-prev" type="button" data-carousel-target="applications" data-carousel-direction="-1" aria-label="Ver aplicação anterior">‹</button>
-          <div class="application-row grid gap-5 sm:grid-cols-2 md:grid-cols-3" data-carousel="applications" aria-label="Aplicações no campo: arraste para o lado no celular">
-            <article class="flex flex-col rounded-2xl bg-white p-4 shadow-[0_10px_30px_-15px_rgba(15,68,56,0.12)] ring-1 ring-black/5"><div class="aspect-[3/4] w-full overflow-hidden rounded-xl application-image"><img src="assets/aplicacao-caixa.webp" alt="Caixa d’água em área alta de propriedade rural" loading="lazy"><span>CAIXA D’ÁGUA</span></div><p class="mt-4 text-sm leading-relaxed text-body sm:text-base">Leve água de uma parte mais baixa até um reservatório.</p></article>
-            <article class="flex flex-col rounded-2xl bg-white p-4 shadow-[0_10px_30px_-15px_rgba(15,68,56,0.12)] ring-1 ring-black/5"><div class="aspect-[3/4] w-full overflow-hidden rounded-xl application-image"><img src="assets/aplicacao-criacao.webp" alt="Animais bebendo água em reservatório rural" loading="lazy"><span>CRIAÇÃO</span></div><p class="mt-4 text-sm leading-relaxed text-body sm:text-base">Ajude a manter bebedouros e reservatórios abastecidos para os animais.</p></article>
-            <article class="flex flex-col rounded-2xl bg-white p-4 shadow-[0_10px_30px_-15px_rgba(15,68,56,0.12)] ring-1 ring-black/5"><div class="aspect-[3/4] w-full overflow-hidden rounded-xl application-image"><img src="assets/aplicacao-horta.webp" alt="Horta e pequena produção com reservatório de água" loading="lazy"><span>HORTA E PRODUÇÃO</span></div><p class="mt-4 text-sm leading-relaxed text-body sm:text-base">Leve água até um reservatório próximo da horta, pomar ou pequena produção.</p></article>
-          </div>
-          <button class="carousel-nav carousel-nav-next" type="button" data-carousel-target="applications" data-carousel-direction="1" aria-label="Ver próxima aplicação">›</button>
-        </div>
-        <div class="more-uses mx-auto mt-6 max-w-3xl"><strong>E TAMBÉM PODE SER USADO PARA:</strong><span>✓ pasto</span><span>✓ pomar</span><span>✓ reservatórios</span><span>✓ tanques</span><span>✓ outros pontos da propriedade</span></div>
-        <div class="mx-auto mt-6 max-w-md"><a href="#checkout" class="inline-flex w-full items-center justify-center rounded-[12px] bg-brand font-bold text-white shadow-[0_6px_20px_-4px_rgba(15,68,56,0.35)] transition-all hover:bg-brand-dark hover:-translate-y-0.5 active:translate-y-0 heartbeat px-6 py-5 text-lg sm:text-xl">QUERO APROVEITAR MINHA ÁGUA</a></div>
-      </div>
-    </section>
-
-    <!-- 5. O PLANO COMPLETO: um único bloco visual curto -->
-    <section class="bg-background px-5 py-6 sm:py-8" id="projeto-personalizado">
-      <div class="mx-auto max-w-5xl">
-        <div class="flex flex-col items-center text-center"><span class="inline-flex items-center gap-2 rounded-full bg-[#FFD60A] px-4 py-1.5 text-sm font-semibold text-[#0F4438]">EXCLUSIVO DO PLANO COMPLETO</span><h2 class="mt-4 max-w-3xl text-2xl font-black uppercase leading-tight text-brand sm:text-4xl">COLOQUE AS MEDIDAS DO SEU TERRENO<br>E RECEBA O PROJETO PRONTO</h2><p class="mt-3 max-w-2xl text-base leading-relaxed text-body sm:text-lg">Informe distância, altura e onde quer levar a água. O aplicativo organiza a configuração, peças e medidas para o seu caso.</p></div>
-        <img class="webapp-visual mx-auto mt-6 w-full max-w-3xl" src="assets/webapp-projeto.webp" alt="Celular mostrando o projeto personalizado do terreno, lista de peças e esquema da água" loading="lazy">
-        <div class="simple-steps mx-auto mt-6 max-w-3xl"><div class="steps-row"><div><b>1</b><strong>MEÇA</strong><span>Distância, altura e terreno.</span></div><div><b>2</b><strong>INFORME</strong><span>Coloque os dados no aplicativo.</span></div><div><b>3</b><strong>RECEBA</strong><span>Veja seu projeto, peças e medidas.</span></div></div></div>
-      </div>
-    </section>
-
-    <!-- 6. DEPOIMENTOS: mesma posição e grid de 3 cartões da referência ("veja o que já construíram") -->
-    <section class="bg-background px-5 py-6 sm:py-8">
-      <div class="mx-auto max-w-5xl">
-        <div class="flex flex-col items-center text-center"><span class="inline-flex items-center gap-2 rounded-full bg-[#FFD60A] px-4 py-1.5 text-sm font-semibold text-[#0F4438]">MENSAGENS RECEBIDAS</span><h2 class="mt-4 max-w-3xl text-2xl font-black uppercase leading-tight text-[#0F4438] sm:text-4xl">VEJA AS EXPERIÊNCIAS COMPARTILHADAS</h2></div>
-        <div class="carousel-shell mt-6">
-          <button class="carousel-nav carousel-nav-prev" type="button" data-carousel-target="testimonials" data-carousel-direction="-1" aria-label="Ver depoimento anterior">‹</button>
-          <div class="testimonials-row grid gap-5 sm:grid-cols-2 md:grid-cols-3" data-carousel="testimonials" aria-label="Depoimentos: arraste para o lado no celular">
-            <article class="testimonial-card"><img src="assets/depoimento-1.webp" alt="Mensagem enviada sobre a apostila Água Sem Energia" loading="lazy"></article>
-            <article class="testimonial-card"><img src="assets/depoimento-2.webp" alt="Mensagem enviada sobre o projeto completo" loading="lazy"></article>
-            <article class="testimonial-card"><img src="assets/depoimento-3.webp" alt="Mensagem enviada sobre o sistema com garrafa PET" loading="lazy"></article>
-          </div>
-          <button class="carousel-nav carousel-nav-next" type="button" data-carousel-target="testimonials" data-carousel-direction="1" aria-label="Ver próximo depoimento">›</button>
-        </div>
-        <div class="mx-auto mt-6 max-w-md"><a href="#checkout" class="inline-flex w-full items-center justify-center rounded-[12px] bg-brand font-bold text-white shadow-[0_6px_20px_-4px_rgba(15,68,56,0.35)] transition-all hover:bg-brand-dark hover:-translate-y-0.5 active:translate-y-0 heartbeat px-6 py-5 text-lg sm:text-xl">QUERO O MESMO RESULTADO</a></div>
-      </div>
-    </section>
-
-    <!-- 7. BÔNUS: mesmo bloco verde da referência -->
-    <section class="bg-background px-5 py-6 sm:py-8">
-      <div class="mx-auto max-w-5xl"><div class="flex flex-col items-center text-center"><span class="inline-flex items-center gap-2 rounded-full bg-[#0F4438]/10 px-4 py-1.5 text-sm font-semibold text-[#0F4438]">✦ SUPER BÔNUS</span><h2 class="mt-4 max-w-3xl text-2xl font-black uppercase leading-tight text-brand sm:text-4xl">3 PROJETOS PRONTOS</h2></div>
-        <div class="bonus-offer-card mx-auto mt-6 max-w-3xl rounded-2xl bg-[#0F4438] p-6 shadow-[0_16px_40px_-12px_rgba(15,68,56,0.35)] sm:p-8"><img class="bonus-mockup" src="assets/bonus-premium-v2.webp" width="1200" height="800" alt="Mockup sem fundo dos três projetos bônus: caixa d’água, criação e horta" loading="lazy"><p class="text-xs font-extrabold uppercase tracking-wide text-[#FFD60A] sm:text-sm">BÔNUS INCLUSOS</p><h3 class="mt-1 text-xl font-black text-white sm:text-2xl">Caixa d’água • Criação • Horta</h3><p class="mt-2 text-sm leading-relaxed text-white/80 sm:text-base">Use um dos projetos prontos como modelo para montar o seu.</p></div>
-        <div class="mx-auto mt-6 max-w-md"><a href="#checkout" class="inline-flex w-full items-center justify-center rounded-[12px] bg-brand px-6 py-5 text-lg font-extrabold text-white shadow-[0_6px_20px_-4px_rgba(15,68,56,0.35)] transition-all hover:bg-brand-dark hover:-translate-y-0.5 active:translate-y-0 heartbeat sm:text-xl">QUERO MEUS PROJETOS</a></div>
-      </div>
-    </section>
-
-    <!-- 8. OFERTA: mesmo cartão da referência, duplicado para os dois planos solicitados -->
-    <section id="checkout" class="bg-background px-5 py-8 sm:py-12">
-      <div class="mx-auto max-w-5xl"><h2 class="text-center text-3xl font-black uppercase leading-tight text-brand sm:text-5xl">ESCOLHA COMO VOCÊ QUER MONTAR</h2>
-        <div class="offer-grid mt-8">
-          <article class="basic-offer rounded-3xl bg-white p-6 shadow-[0_8px_30px_-12px_rgba(15,68,56,0.18)] ring-2 ring-brand sm:p-8">
-            <div class="offer-product"><img src="assets/plano-basico.webp" alt="Mockup da apostila Água Sem Energia do Plano Básico" loading="lazy"></div>
-            <p class="text-center text-xs font-bold uppercase tracking-wide text-brand">PLANO BÁSICO</p><h3 class="text-center text-xl font-black uppercase text-brand sm:text-2xl">APOSTILA ÁGUA SEM ENERGIA</h3>
-            <ul class="offer-list offer-list-card mt-6 space-y-3"><li><i>✉</i>Acesso imediato por E-mail</li><li><i>◉</i>7 dias de garantia</li><li><i>∞</i>Acesso vitalício</li><li><i>▤</i>Passo a passo de montagem</li><li><i>✦</i>3 projetos prontos: caixa, criação e horta</li></ul>
-            <div class="offer-price mt-8 text-center"><p>De <s>R$ 47,90</s> por</p><div><strong>R$9,90</strong><span>79% OFF</span></div></div>
-            <div class="mt-8"><a href="https://pay.wiapy.com/JVNVCu_cL8Ar" data-plan="basico" class="inline-flex w-full items-center justify-center rounded-[12px] bg-action px-6 py-5 text-lg font-extrabold text-brand shadow-[0_8px_30px_-6px_rgba(255,214,10,0.45)] transition-all hover:bg-action-hover hover:-translate-y-0 heartbeat sm:text-xl">GARANTIR A APOSTILA</a><p class="secure-purchase"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>Compra 100% segura</p></div>
+    <section class="section comparison" id="comparacao">
+      <div class="container">
+        <h2 class="section-title">VEJA A DIFERENÇA ENTRE UM PROJETO TRADICIONAL E UM PROJETO OFF GRID</h2>
+        <div class="comparison-grid">
+          <article class="compare-card traditional">
+            <header class="compare-head"><span class="large-mark negative" aria-hidden="true">×</span><div><h3>Projeto Tradicional</h3><p>com bateria de lítio</p></div></header>
+            <ul class="compare-list">
+              <li><span>Bateria</span><strong>R$ 2.500 a R$ 5.000 / kWh</strong></li>
+              <li><span>Instalação</span><strong>Precisa contratar empresa</strong></li>
+              <li><span>Conhecimento técnico</span><strong>Depende de profissional</strong></li>
+              <li><span>Economia total</span><strong>—</strong></li>
+            </ul>
           </article>
-          <article class="complete-offer relative rounded-3xl bg-white p-6 shadow-[0_8px_30px_-12px_rgba(15,68,56,0.18)] ring-2 ring-brand sm:p-8"><span class="offer-badge">MAIS VENDIDO</span>
-            <div class="offer-product offer-product-complete"><img src="assets/plano-completo.webp" alt="Mockup do Plano Completo com apostila, web app no celular e três bônus" loading="lazy"></div>
-            <p class="text-center text-xs font-bold uppercase tracking-wide text-brand">PLANO COMPLETO</p><h3 class="text-center text-xl font-black uppercase text-brand sm:text-2xl">APOSTILA + APLICATIVO PERSONALIZADO</h3>
-            <ul class="offer-list offer-list-card mt-6 space-y-3"><li><i>✉</i>Acesso imediato por E-mail</li><li><i>◉</i>7 dias de garantia</li><li><i>∞</i>Acesso vitalício</li><li><i>▤</i>Passo a passo de montagem</li><li><i>✦</i>3 projetos prontos: caixa, criação e horta</li><li class="app-differential"><i>▣</i>Projeto personalizado por aplicativo</li></ul>
-            <div class="offer-price mt-8 text-center"><p>De <s>R$ 127,90</s> por</p><div><strong>R$27,90</strong><span>78% OFF</span></div></div>
-            <div class="mt-8"><a href="https://pay.wiapy.com/-_uk8YovU5V5" data-plan="completo" class="inline-flex w-full items-center justify-center rounded-[12px] bg-action px-6 py-5 text-lg font-extrabold text-brand shadow-[0_8px_30px_-6px_rgba(255,214,10,0.45)] transition-all hover:bg-action-hover hover:-translate-y-0.5 active:translate-y-0 heartbeat sm:text-xl">QUERO MEU PROJETO</a><p class="secure-purchase"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>Compra 100% segura</p></div>
+          <article class="compare-card recommended">
+            <span class="recommended-badge">RECOMENDADO</span>
+            <header class="compare-head"><span class="large-mark positive" aria-hidden="true">✓</span><div><h3>Método OFF GRID</h3><p>com bateria comum</p></div></header>
+            <ul class="compare-list">
+              <li><span>Bateria</span><strong>R$ 500 a R$ 2.000 / kWh</strong></li>
+              <li><span>Instalação</span><strong>Você mesmo monta</strong></li>
+              <li><span>Conhecimento técnico</span><strong>Aprende do zero</strong></li>
+              <li><span>Economia total</span><strong class="compare-highlight">Até 50% mais barato</strong></li>
+            </ul>
           </article>
         </div>
+        <p class="section-note">O segredo é não começar com um sistema maior do que você precisa. Você aprende a calcular o consumo do seu sítio, escolher os componentes e planejar um sistema OFF GRID que pode começar menor e ser ampliado depois.</p>
+        <a class="cta cta-green" href="#checkout">GARANTIR APOSTILA</a>
       </div>
     </section>
 
-    <!-- 9. GARANTIA: mesmo cartão central -->
-    <section class="px-5 py-10 sm:py-14"><div class="mx-auto max-w-md"><div class="rounded-3xl bg-white p-6 text-center shadow-[0_8px_30px_-12px_rgba(15,68,56,0.12)] ring-1 ring-[#0F4438]/10 sm:p-8"><div class="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-[#0F4438] shadow-[0_8px_24px_-8px_rgba(15,68,56,0.35)]"><svg class="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div><h2 class="mt-5 text-2xl font-black text-[#0F4438] sm:text-3xl">GARANTIA DE 7 DIAS</h2><div class="mx-auto mt-4 h-px w-24 bg-gray-200"></div><p class="mt-4 text-sm leading-relaxed text-gray-500 sm:text-base">Teste sem risco. Se não funcionar no seu terreno ou você não gostar, devolvemos 100% do seu dinheiro.</p></div></div></section>
+    <section class="section learning" id="conteudo">
+      <div class="container center"><span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v15"/><path d="M3 5.5c3-1.5 6-1.5 9 0v14c-3-1.5-6-1.5-9 0z"/><path d="M12 5.5c3-1.5 6-1.5 9 0v14c-3-1.5-6-1.5-9 0z"/></svg>CONTEÚDO COMPLETO</span><h2 class="section-title">O QUE VOCÊ IRÁ APRENDER</h2></div>
+      <div class="marquee-viewport" aria-label="Componentes e aplicações apresentados no guia">
+        <div class="marquee-track" id="learning-track">
+          <img class="marquee-card" id="card-painel-placeholder" src="assets/carrossel-painel.png" alt="Painel solar em propriedade rural" loading="lazy">
+          <img class="marquee-card" id="card-bateria-placeholder" src="assets/carrossel-bateria.png" alt="Bateria automotiva usada como exemplo de estudo" loading="lazy">
+          <img class="marquee-card" id="card-controlador-placeholder" src="assets/carrossel-controlador.png" alt="Controlador de carga solar" loading="lazy">
+          <img class="marquee-card" id="card-inversor-placeholder" src="assets/carrossel-inversor.png" alt="Inversor para sistema solar OFF GRID" loading="lazy">
+          <img class="marquee-card" id="card-cabos-placeholder" src="assets/carrossel-cabos.png" alt="Cabos solares e conectores" loading="lazy">
+          <img class="marquee-card" id="card-disjuntores-placeholder" src="assets/carrossel-disjuntores.png" alt="Disjuntores e proteções elétricas" loading="lazy">
+          <img class="marquee-card" id="card-sistema-placeholder" src="assets/carrossel-sistema.png" alt="Exemplo didático de componentes de um sistema OFF GRID" loading="lazy">
+          <img class="marquee-card" id="card-sitio-placeholder" src="assets/carrossel-sitio.png" alt="Sítio com painéis solares" loading="lazy">
+        </div>
+      </div>
+      <div class="container">
+        <div class="learning-list">
+          <ul class="check-grid">
+            <li>Conceitos básicos de elétrica e energia solar para iniciantes</li>
+            <li>Como planejar um sistema de energia solar para sítio ou fazenda</li>
+            <li>Como descobrir a quantidade de painéis necessária</li>
+            <li>Como calcular a quantidade e capacidade das baterias</li>
+            <li>Como calcular quantas horas o sistema poderá funcionar</li>
+            <li>Como escolher controlador e inversor</li>
+            <li>Como dimensionar cabos, fusíveis, disjuntores e proteções</li>
+            <li>Como começar com um projeto menor e ampliar depois</li>
+            <li>Como planejar energia para iluminação, internet e câmeras</li>
+            <li>Como adaptar o projeto às necessidades da propriedade</li>
+          </ul>
+        </div>
+        <a class="cta cta-green" href="#checkout">GARANTIR APOSTILA</a>
+      </div>
+    </section>
 
-    <!-- 10. FAQ: mesmo acordeão e transição -->
-    <section class="bg-background px-5 py-6 sm:py-8"><div class="mx-auto max-w-3xl"><h2 class="text-center text-2xl font-black uppercase text-[#0F4438] sm:text-4xl">Perguntas frequentes</h2><div class="mt-6 space-y-3 faq-list">
-      <div class="faq-item is-open"><button type="button" aria-expanded="true"><span>Preciso entender de hidráulica?</span><span class="faq-sign">−</span></button><div class="faq-answer"><p>Não. A apostila mostra tudo passo a passo com linguagem simples.</p></div></div>
-      <div class="faq-item"><button type="button" aria-expanded="false"><span>Funciona em qualquer terreno?</span><span class="faq-sign">+</span></button><div class="faq-answer"><p>Não. É preciso ter água correndo e condições adequadas de desnível. O material mostra como verificar isso.</p></div></div>
-      <div class="faq-item"><button type="button" aria-expanded="false"><span>Precisa de energia elétrica?</span><span class="faq-sign">+</span></button><div class="faq-answer"><p>Não. Quando instalado nas condições corretas, o sistema aproveita a própria força da água.</p></div></div>
-      <div class="faq-item"><button type="button" aria-expanded="false"><span>É feito só com garrafa PET?</span><span class="faq-sign">+</span></button><div class="faq-answer"><p>Não. A garrafa PET faz parte do sistema junto com canos, conexões e outras peças simples.</p></div></div>
-      <div class="faq-item"><button type="button" aria-expanded="false"><span>Posso usar para minha criação?</span><span class="faq-sign">+</span></button><div class="faq-answer"><p>Sim, quando as condições do terreno e a quantidade de água disponível forem adequadas, o sistema pode abastecer reservatórios e bebedouros.</p></div></div>
-      <div class="faq-item"><button type="button" aria-expanded="false"><span>Posso usar na horta?</span><span class="faq-sign">+</span></button><div class="faq-answer"><p>Sim. Uma das aplicações é levar água até um reservatório usado na horta ou pequena produção.</p></div></div>
-      <div class="faq-item"><button type="button" aria-expanded="false"><span>Qual a diferença dos planos?</span><span class="faq-sign">+</span></button><div class="faq-answer"><p>No Básico você recebe a apostila completa. No Completo você recebe a apostila e acesso ao sistema que gera uma configuração personalizada a partir das medidas do seu terreno.</p></div></div>
-      <div class="faq-item"><button type="button" aria-expanded="false"><span>Recebo na hora?</span><span class="faq-sign">+</span></button><div class="faq-answer"><p>Sim. O conteúdo digital é liberado após a confirmação do pagamento.</p></div></div>
+    <section class="section projects" id="projetos">
+      <div class="container center"><span class="eyebrow">PROJETOS REAIS</span><h2 class="section-title">PROJETOS QUE ALUNOS FIZERAM</h2>
+        <div class="project-grid">
+          <article class="project-card"><img class="project-image" src="assets/depoimento-carlos.png" alt="Carlos junto a um sistema de energia solar no sítio à noite" loading="lazy"><h3>Carlos</h3><blockquote>“Para mim, a energia solar parecia um sonho caro e distante. Segui o passo a passo da apostila e gastei R$580 para montar meu primeiro sistema. Hoje, toda a iluminação da casa do sítio e o roteador de internet funcionam direto por esse sistema OFF GRID. O curso me ensinou como começar de forma acessível e, o melhor, montando tudo sozinho.”</blockquote><p class="project-attribution">Carlos, aluno do curso Sítio OFF GRID</p></article>
+          <article class="project-card"><img class="project-image" src="assets/depoimento-joao.png" alt="João ao lado de geladeira e componentes de um sistema solar no sítio" loading="lazy"><h3>João</h3><blockquote>“A rede elétrica no sítio sempre falhava e a conta estava pesada. Decidi investir R$690 seguindo as orientações da apostila e hoje minha geladeira funciona 100% no sistema solar, sem depender de ninguém. O material explica tudo tão bem que eu mesmo montei o sistema básico em um fim de semana.”</blockquote><p class="project-attribution">João, aluno do curso Sítio OFF GRID</p></article>
+          <article class="project-card"><img class="project-image" src="assets/depoimento-roberto.png" alt="Sistema solar com painéis, baterias e inversor em propriedade rural" loading="lazy"><h3>Roberto</h3><blockquote>“Comecei com um sistema pequeno para internet e câmeras. Depois, resolvi investir mais uns R$1.500 para ampliar a capacidade e hoje alimento geladeira, TV, iluminação e o roteador principal com esse aqui. O curso Sítio OFF GRID ensina como calcular o consumo real e escalar o projeto do jeito certo.”</blockquote><p class="project-attribution">Roberto, aluno do curso Sítio OFF GRID</p></article>
+        </div>
+        <a class="cta cta-green" href="#checkout">GARANTIR APOSTILA</a>
+      </div>
+    </section>
+
+    <section class="section app-section" id="aplicativo">
+      <div class="container center"><span class="eyebrow">PLANO COMPLETO</span><h2 class="section-title">O APLICATIVO CALCULA O SISTEMA PARA O SEU SÍTIO.</h2>
+        <img class="app-mockup" id="app-placeholder" src="assets/mockup-aplicativo.png" alt="Mockup ilustrativo do aplicativo Sítio OFF GRID em um celular, com campos e estimativas de projeto" loading="lazy">
+        <p class="app-intro">No Plano Completo, você informa os aparelhos que pretende usar e o sistema gera uma configuração orientativa para ajudar no planejamento.</p>
+        <div class="app-demo">
+          <div class="app-panel"><span class="app-label">SEU SÍTIO</span><h3>Você informa:</h3><ul class="app-list"><li>quais aparelhos quer ligar</li><li>potência dos aparelhos</li><li>quantidade</li><li>horas de uso por dia</li><li>autonomia desejada</li><li>horas aproximadas de sol</li><li>tensão do sistema</li></ul></div>
+          <span class="app-arrow" aria-hidden="true">→</span>
+          <div class="app-panel"><span class="app-label">SEU PROJETO</span><h3>O sistema mostra:</h3><ul class="app-list"><li>consumo estimado</li><li>capacidade necessária da bateria</li><li>potência aproximada dos painéis</li><li>faixa recomendada de inversor</li><li>controlador necessário</li><li>lista orientativa de componentes</li><li>estimativa de autonomia</li><li>alertas importantes</li></ul></div>
+        </div>
+        <h3 class="steps-title">SIMPLES ASSIM:</h3><div class="steps"><div><b>1</b><strong>ESCOLHA O QUE QUER LIGAR</strong></div><div><b>2</b><strong>INFORME QUANTAS HORAS</strong></div><div><b>3</b><strong>RECEBA A CONFIGURAÇÃO</strong></div></div>
+        <a class="cta cta-green" href="#plano-completo">QUERO O PLANO COMPLETO</a>
+      </div>
+    </section>
+
+    <section class="section bonuses" id="bonus">
+      <div class="container center"><span class="eyebrow">BÔNUS GRATUITOS</span><h2 class="section-title">GARANTA SEU ACESSO E RECEBA 3 BÔNUS PARA FACILITAR SEU PROJETO</h2>
+        <div class="bonus-panel">
+          <img class="bonus-mockup" id="bonus-placeholder" src="assets/mockup-bonus.png" alt="Três bônus digitais: projetos de referência, lista de compras e apostila de erros comuns" loading="lazy">
+          <article class="bonus-item"><span class="bonus-icon" aria-hidden="true">▦</span><span class="bonus-number">BÔNUS 1</span><h3>10 PROJETOS OFF GRID PARA SÍTIO</h3><p>Configurações de referência para necessidades comuns de uma propriedade rural.</p></article>
+          <article class="bonus-item"><span class="bonus-icon" aria-hidden="true">☷</span><span class="bonus-number">BÔNUS 2</span><h3>LISTA DE COMPRAS OFF GRID</h3><p>Checklist dos componentes para conferir antes de comprar ou montar o sistema.</p></article>
+          <article class="bonus-item"><span class="bonus-icon" aria-hidden="true">⚙</span><span class="bonus-number">BÔNUS 3</span><h3>APOSTILA DE ERROS E FALHAS COMUNS</h3><p>Veja o que verificar quando o sistema carrega pouco, desarma ou entrega menos autonomia.</p></article>
+        </div>
+        <a class="cta cta-yellow" href="#checkout">QUERO O GUIA + OS BÔNUS</a>
+      </div>
+    </section>
+
+    <section class="section checkout" id="checkout">
+      <div class="container center"><h2 class="section-title checkout-title">VALOR DO SEU INVESTIMENTO</h2>
+        <article class="offer-card basic-offer" id="plano-basico">
+          <img class="offer-mockup" id="checkout-guia-placeholder" src="assets/mockup-guia-digital.png" alt="Mockup da apostila Sítio OFF GRID, igual ao apresentado no topo da página" loading="lazy">
+          <ul class="offer-list"><li><span class="offer-icon"><svg><use href="#icon-mail"/></svg></span><span>Acesso digital imediato</span></li><li><span class="offer-icon"><svg><use href="#icon-shield-check"/></svg></span><span>7 dias de garantia</span></li><li><span class="offer-icon"><svg><use href="#icon-infinity"/></svg></span><span>Apostila completa e cálculos passo a passo</span></li><li><span class="offer-icon"><svg><use href="#icon-card"/></svg></span><span>Pagamento único</span></li><li><span class="offer-icon"><svg><use href="#icon-gift"/></svg></span><span>3 bônus: Projetos, Lista de Compras e Apostila de Erros</span></li></ul>
+          <div class="offer-price"><span class="price-prelude">De <s>R$ 37,90</s> por</span><div class="price-row"><strong>R$9,90</strong><span class="price-off" aria-label="74 por cento de desconto">-74%</span></div></div>
+          <button class="cta cta-yellow purchase-button" type="button" data-plan="basico">GARANTIR APOSTILA</button>
+          <p class="secure"><svg aria-hidden="true"><use href="#icon-shield-check"/></svg>Compra 100% segura</p>
+        </article>
+        <article class="offer-card premium-offer" id="plano-completo">
+          <span class="premium-badge">PLANO COMPLETO</span>
+          <img class="offer-mockup premium-mockup" src="assets/mockup-plano-completo.png" alt="Apostila Sítio OFF GRID, três bônus e aplicativo de dimensionamento em um celular" loading="lazy">
+          <ul class="offer-list"><li><span class="offer-icon"><svg><use href="#icon-mail"/></svg></span><span>Acesso digital imediato à apostila e ao aplicativo</span></li><li><span class="offer-icon"><svg><use href="#icon-shield-check"/></svg></span><span>7 dias de garantia</span></li><li><span class="offer-icon"><svg><use href="#icon-infinity"/></svg></span><span>Todo o conteúdo do plano de R$9,90</span></li><li><span class="offer-icon"><svg><use href="#icon-card"/></svg></span><span>Pagamento único</span></li><li><span class="offer-icon"><svg><use href="#icon-gift"/></svg></span><span>3 bônus + aplicativo de dimensionamento</span></li></ul>
+          <div class="offer-price"><span class="price-prelude">De <s>R$ 137,90</s> por</span><div class="price-row"><strong>R$27,90</strong><span class="price-off" aria-label="80 por cento de desconto">-80%</span></div></div>
+          <button class="cta cta-yellow purchase-button" type="button" data-plan="completo">QUERO O PLANO COMPLETO</button>
+          <p class="secure"><svg aria-hidden="true"><use href="#icon-shield-check"/></svg>Compra 100% segura</p>
+        </article>
+        <p class="checkout-message" id="checkout-message" role="status" aria-live="polite" hidden></p>
+      </div>
+    </section>
+
+    <section class="section guarantee" id="garantia"><div class="guarantee-card"><div class="shield-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div><h2>GARANTIA DE 7 DIAS</h2><div class="divider"></div><p>Teste sem risco. Se o conteúdo não fizer sentido para você, solicite o reembolso dentro do período de garantia.</p></div></section>
+
+    <section class="section faq" id="perguntas"><div class="faq-container"><h2 class="section-title">PERGUNTAS FREQUENTES</h2><div class="faq-list">
+      <div class="faq-item is-open"><button type="button" aria-expanded="true"><span>PRECISO ENTENDER DE ELÉTRICA OU ENERGIA SOLAR?</span><span class="faq-sign">−</span></button><div class="faq-answer"><div><p>Não. O material começa do básico e explica a função dos componentes em linguagem simples.</p></div></div></div>
+      <div class="faq-item"><button type="button" aria-expanded="false"><span>PRECISO COMPRAR BATERIA DE LÍTIO?</span><span class="faq-sign">+</span></button><div class="faq-answer"><div><p>Não necessariamente. O conteúdo mostra alternativas de armazenamento mais acessíveis e explica as diferenças e limitações de cada opção.</p></div></div></div>
+      <div class="faq-item"><button type="button" aria-expanded="false"><span>POSSO USAR BATERIA DE CARRO?</span><span class="faq-sign">+</span></button><div class="faq-answer"><div><p>Uma bateria automotiva pode ser considerada em determinadas configurações, mas ela não foi projetada para descargas profundas frequentes como uma bateria estacionária. O material explica essa limitação e como considerá-la no planejamento.</p></div></div></div>
+      <div class="faq-item"><button type="button" aria-expanded="false"><span>FUNCIONA EM DIAS NUBLADOS?</span><span class="faq-sign">+</span></button><div class="faq-answer"><div><p>Os painéis ainda podem gerar energia em condições de menor luminosidade, porém em quantidade reduzida. A autonomia dependerá do consumo, da bateria e do dimensionamento do sistema.</p></div></div></div>
+      <div class="faq-item"><button type="button" aria-expanded="false"><span>CONSIGO TER ENERGIA NA CASA DO SÍTIO?</span><span class="faq-sign">+</span></button><div class="faq-answer"><div><p>Sim, desde que o sistema seja calculado para os aparelhos que você pretende utilizar. Quanto maior o consumo, maior deverá ser o sistema.</p></div></div></div>
+      <div class="faq-item"><button type="button" aria-expanded="false"><span>POSSO LIGAR GELADEIRA, BOMBA OU FERRAMENTAS?</span><span class="faq-sign">+</span></button><div class="faq-answer"><div><p>Depende da potência e do pico de partida do equipamento. Cargas maiores precisam de um sistema especificamente dimensionado para elas.</p></div></div></div>
+      <div class="faq-item"><button type="button" aria-expanded="false"><span>POSSO FAZER TUDO SOZINHO?</span><span class="faq-sign">+</span></button><div class="faq-answer"><div><p>O material ajuda você a entender, calcular e planejar o sistema. Intervenções na instalação elétrica fixa da propriedade devem ser realizadas ou verificadas por profissional qualificado.</p></div></div></div>
+      <div class="faq-item"><button type="button" aria-expanded="false"><span>VOU RECEBER PAINEL, BATERIA OU INVERSOR?</span><span class="faq-sign">+</span></button><div class="faq-answer"><div><p>Não. O produto é digital. Você recebe o conteúdo e as ferramentas para planejar o sistema. Os equipamentos físicos são adquiridos separadamente.</p></div></div></div>
+      <div class="faq-item"><button type="button" aria-expanded="false"><span>QUAL A DIFERENÇA ENTRE OS DOIS PLANOS?</span><span class="faq-sign">+</span></button><div class="faq-answer"><div><p>No Básico você recebe todo o conteúdo passo a passo e os três bônus. No Completo você também recebe acesso ao aplicativo que calcula uma configuração orientativa a partir dos aparelhos e dados informados.</p></div></div></div>
+      <div class="faq-item"><button type="button" aria-expanded="false"><span>SE EU NÃO GOSTAR, POSSO PEDIR REEMBOLSO?</span><span class="faq-sign">+</span></button><div class="faq-answer"><div><p>Sim. O produto possui garantia de 7 dias.</p></div></div></div>
     </div></div></section>
-    <footer class="bg-[#0F4438] px-5 py-5"><p class="text-center text-sm text-white/80">© <span id="year"></span>. Todos os direitos reservados.</p></footer>
   </main>
-  <script src="script.js"></script>
+  <footer>© 2026 Sítio OFF GRID. Todos os direitos reservados.</footer>
 </body>
 </html>
