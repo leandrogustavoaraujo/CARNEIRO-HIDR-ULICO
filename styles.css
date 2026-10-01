@@ -38,6 +38,15 @@
 .bonus-icon{background:#FFF3E8;color:#FF7A00}.bonus-number{color:#FF7A00}
 .offer-card{border-color:#FF7A00;box-shadow:0 8px 30px -12px rgba(255,122,0,.18)}
 .premium-offer{box-shadow:0 14px 38px -12px rgba(255,122,0,.24)}
+
+/* Selos informativos da hero */
+.updated-badge{display:inline-flex;align-items:center;justify-content:center;gap:8px;margin:0 auto 2px;padding:10px 18px;border:1px solid #FFCCAA;border-radius:999px;background:#FFF3E8;color:#FF7A00;font-size:14px;line-height:1;font-weight:600}
+.updated-badge svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.download-proof{display:inline-flex;align-items:center;justify-content:center;gap:9px;margin:20px auto 0;padding:12px 18px;border:1px solid #EAEAEA;border-radius:14px;background:#FFFFFF;color:#1F1F1F;box-shadow:0 5px 18px rgba(31,31,31,.08);font-size:15px;line-height:1}
+.download-proof svg{width:23px;height:23px;fill:none;stroke:#FF7A00;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.download-proof strong{font-size:19px;font-weight:900}.download-proof span{color:#666666;font-weight:500}
+.hero .download-proof+.cta{margin-top:22px}
+@media(min-width:640px){.updated-badge{padding:11px 20px;font-size:16px}.download-proof{padding:13px 20px;font-size:17px}.download-proof strong{font-size:21px}}
 .offer-icon{background:#FFF3E8;color:#FF7A00}
 .offer-price strong{color:#FF7A00}.secure{color:#1F1F1F}.secure svg{color:#FF7A00}
 .project-card{box-shadow:0 10px 30px -15px rgba(31,31,31,.12)}
