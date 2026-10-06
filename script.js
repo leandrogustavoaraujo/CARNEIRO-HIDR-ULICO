@@ -34,10 +34,31 @@ document.querySelectorAll('.faq-item button').forEach(button => {
   });
 });
 
-// Preserva a origem da campanha até o pagamento e registra a intenção de compra
-// somente nos dois links que levam ao checkout.
+// A oferta abre somente ao escolher a compra básica; recusa segue ao checkout.
+(() => {
+  const modal = document.getElementById('upgrade-modal');
+  const basic = document.querySelector('.purchase-button[data-plan="basico"]');
+  if (!modal || !basic || typeof modal.showModal !== 'function') return;
+  document.addEventListener('click', (event) => {
+    const trigger = event.target.closest && event.target.closest('.purchase-button[data-plan="basico"]');
+    if (!trigger) return;
+    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    modal.showModal();
+    document.body.classList.add('upgrade-open');
+  }, true);
+  modal.querySelector('.upgrade-close').addEventListener('click', () => modal.close());
+  modal.addEventListener('close', () => document.body.classList.remove('upgrade-open'));
+})();
+
+// Preserva a origem da campanha até o pagamento e registra a intenção de compra.
 (() => {
   const checkoutProducts = {
+    'https://pay.wiapy.com/b9iSslfLwCda': {
+      name: 'Sítio OFF GRID — Plano Completo Promocional',
+      value: 19.90
+    },
     'https://pay.wiapy.com/5S1r_y6eb2mL': {
       name: 'Sítio OFF GRID — Apostila',
       value: 9.90
@@ -69,7 +90,8 @@ document.querySelectorAll('.faq-item button').forEach(button => {
     if (!product) return;
 
     link.href = checkoutUrlWithTracking(baseUrl);
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (event) => {
+      if (event.defaultPrevented) return;
       if (typeof window.fbq === 'function') {
         window.fbq('track', 'InitiateCheckout', {
           content_name: product.name,
