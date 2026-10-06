@@ -34,24 +34,6 @@ document.querySelectorAll('.faq-item button').forEach(button => {
   });
 });
 
-// A oferta abre somente ao escolher a compra básica; recusa segue ao checkout.
-(() => {
-  const modal = document.getElementById('upgrade-modal');
-  const basic = document.querySelector('.purchase-button[data-plan="basico"]');
-  if (!modal || !basic || typeof modal.showModal !== 'function') return;
-  document.addEventListener('click', (event) => {
-    const trigger = event.target.closest && event.target.closest('.purchase-button[data-plan="basico"]');
-    if (!trigger) return;
-    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-    event.preventDefault();
-    event.stopImmediatePropagation();
-    modal.showModal();
-    document.body.classList.add('upgrade-open');
-  }, true);
-  modal.querySelector('.upgrade-close').addEventListener('click', () => modal.close());
-  modal.addEventListener('close', () => document.body.classList.remove('upgrade-open'));
-})();
-
 // Preserva a origem da campanha até o pagamento e registra a intenção de compra.
 (() => {
   const checkoutProducts = {
