@@ -37,17 +37,13 @@ document.querySelectorAll('.faq-item button').forEach(button => {
 // Preserva a origem da campanha até o pagamento e registra a intenção de compra.
 (() => {
   const checkoutProducts = {
-    'https://pay.wiapy.com/b9iSslfLwCda': {
-      name: 'Sítio OFF GRID — Plano Completo Promocional',
-      value: 19.90
-    },
     'https://pay.wiapy.com/5S1r_y6eb2mL': {
       name: 'Sítio OFF GRID — Apostila',
-      value: 29.90
+      value: 19.90
     },
     'https://pay.wiapy.com/y5HEBDNZnlfJ': {
       name: 'Sítio OFF GRID — Plano Completo',
-      value: 59.90
+      value: 47.90
     }
   };
   const acceptedParameters = [
