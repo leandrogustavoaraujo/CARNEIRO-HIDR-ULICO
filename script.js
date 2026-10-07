@@ -43,11 +43,11 @@ document.querySelectorAll('.faq-item button').forEach(button => {
     },
     'https://pay.wiapy.com/5S1r_y6eb2mL': {
       name: 'Sítio OFF GRID — Apostila',
-      value: 9.90
+      value: 29.90
     },
     'https://pay.wiapy.com/y5HEBDNZnlfJ': {
       name: 'Sítio OFF GRID — Plano Completo',
-      value: 27.90
+      value: 59.90
     }
   };
   const acceptedParameters = [
