@@ -2,7 +2,7 @@
 
 Abra `index.html` para testar. O botão final leva a `landing/index.html`, cópia integral do ZIP enviado. O pacote não foi publicado. Envie TODO o conteúdo do ZIP à hospedagem, mantendo as pastas `assets` e `landing`. Não envie apenas o index do quiz.
 
-São seis perguntas, uma por vez. Nas perguntas com uma resposta, marcar avança automaticamente. Na seleção de aparelhos, pode marcar mais de um e tocar em Continuar. Voltar e Rever minhas respostas preservam as escolhas enquanto a página permanece aberta. Não há cadastro, coleta remota nem armazenamento das respostas.
+São três perguntas, uma por vez: local, valor da conta e aparelhos. Nas duas primeiras, marcar avança automaticamente. Na seleção de aparelhos, pode marcar mais de um e tocar em Continuar para chegar ao final com as fotos. Voltar e Rever minhas respostas preservam as escolhas enquanto a página permanece aberta. As respostas não são enviadas nem armazenadas remotamente.
 
 ## Foto do cliente
 

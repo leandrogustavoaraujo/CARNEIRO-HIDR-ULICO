@@ -14,10 +14,7 @@ const CONFIG = {
 const questions = [
   {title:'Onde a conta de luz está pesando mais no seu bolso?', options:['Na minha casa','No meu sítio ou chácara','Na minha fazenda']},
   {title:'Quanto você paga por mês na conta de luz hoje?', options:['Até R$150','R$151–300','R$301–500','Mais de R$500']},
-  {title:'Qual dessas situações você mais quer resolver?', options:['A conta de luz está ficando cara demais','Quando falta luz, meus aparelhos param','Preciso de energia num lugar onde a rede não chega']},
-  {title:'Quais aparelhos você quer usar com menos preocupação com a conta de luz?', options:['Lâmpadas','TV e internet','Geladeira/freezer','Bomba d’água','Ventilador','Máquina de lavar','Ferramentas elétricas','Equipamentos da criação ou da produção','Outros'], multiple:true},
-  {title:'O preço da energia solar já fez você adiar esse plano?', options:['Sim, já pedi orçamento e achei caro','Sim, nem pedi orçamento porque acho que não cabe no bolso','Ainda não sei quanto custa para o que eu preciso','O preço não é o problema; tenho outras dúvidas']},
-  {title:'Qual dúvida você precisa resolver para dar o primeiro passo?', options:['Tenho medo de gastar com peças erradas','Não sei por onde começar','Não sei se uma bateria de carro atende ao que preciso','Tenho receio de fazer uma instalação insegura']}
+  {title:'Quais aparelhos você quer usar com menos preocupação com a conta de luz?', options:['Lâmpadas','TV e internet','Geladeira/freezer','Bomba d’água','Ventilador','Máquina de lavar','Ferramentas elétricas','Equipamentos da criação ou da produção','Outros'], multiple:true}
 ];
 const answers = questions.map(()=>[]);
 let step=0, moving=false, timer;
@@ -59,7 +56,7 @@ function showResult(){
   if(answers.some(a=>!a.length))return;
   $('question-screen').hidden=true;$('result-screen').hidden=false;
   $('summary').replaceChildren();
-  ['Local','Conta mensal','Sua dor','Aparelhos','Investimento','Sua dúvida'].forEach((label,i)=>{const row=document.createElement('div'),dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=label;dd.textContent=selected(i);row.append(dt,dd);$('summary').append(row);});
+  ['Local','Conta mensal','Aparelhos'].forEach((label,i)=>{const row=document.createElement('div'),dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=label;dd.textContent=selected(i);row.append(dt,dd);$('summary').append(row);});
   const url=new URL(CONFIG.landingUrl,window.location.href);
   // Leva os parâmetros do anúncio até a landing, sem enviar as respostas pessoais.
   new URLSearchParams(window.location.search).forEach((value,key)=>url.searchParams.set(key,value));
