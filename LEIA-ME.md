@@ -1,19 +1,28 @@
-# Quiz Sítio Off Grid
+# Pacote otimizado com visual e movimentos originais
 
-Abra `index.html` para testar. O botão final leva a `landing/index.html`, cópia integral do ZIP enviado. O pacote não foi publicado. Envie TODO o conteúdo do ZIP à hospedagem, mantendo as pastas `assets` e `landing`. Não envie apenas o index do quiz.
+Esta versão substitui a entrega anterior de otimização.
 
-São três perguntas, uma por vez: local, valor da conta e aparelhos. Nas duas primeiras, marcar avança automaticamente. Na seleção de aparelhos, pode marcar mais de um e tocar em Continuar para chegar ao final com as fotos. Voltar e Rever minhas respostas preservam as escolhas enquanto a página permanece aberta. As respostas não são enviadas nem armazenadas remotamente.
+O HTML, CSS, JavaScript, fontes e animações da landing permanecem iguais ao ZIP original. Foram preservados os botões animados, o brilho, a faixa em movimento, textos, preços, links de pagamento e redirecionamento. As imagens da landing receberam somente compressão, mantendo dimensões e transparência.
 
-## Foto do cliente
+O quiz mantém a apresentação original. A correção do resultado altera apenas o carregamento e a estabilidade das fotos:
 
-As cinco fotos enviadas estão em `assets`, na ordem de envio, em WebP otimizado. Para trocar ou acrescentar fotos, preencha `clientImages` em `quiz.js`. Troca a cada três segundos, voltando à primeira depois da última, sem limite de ciclos. Rótulos ANTES e DEPOIS acima das respectivas metades. Não há controles, contador ou animação de deslizamento. Fotos com erro são ignoradas. Pausa quando a aba fica oculta e retoma quando fica visível. Nenhum valor ou enquadramento foi refeito; a compressão e a redução de resolução diminuem o peso. A foto quadrada aparece apenas na primeira pergunta. O texto final redundante foi removido.
+- primeira foto antecipada após o carregamento da imagem inicial, enquanto a pessoa responde;
+- não espera mais as cinco fotos baixarem para apresentar a primeira;
+- versões WebP menores no celular;
+- espaço fixo para evitar saltos e cortes durante a troca;
+- foto atual permanece visível até a próxima terminar de carregar e decodificar;
+- carrossel continua automático e infinito, com três segundos por foto pronta;
+- imagens com erro são puladas, com nova tentativa disponível se todas falharem;
+- botão da landing continua acessível mesmo quando há falha nas fotos.
 
-## Integração e tracking
+## Publicação
 
-O botão leva à landing da subpasta e preserva os parâmetros recebidos na URL. A landing os transmite aos checkouts. O Meta Pixel 989728143663966 e UTMify originais foram preservados na landing, com PageView, ViewContent e InitiateCheckout dos planos R$19,90 e R$47,90. No quiz, `tracking.js` reutiliza o mesmo pixel apenas com PageView e o carregador UTMify. Não dispara ViewContent ou InitiateCheckout no quiz. Abertura local por arquivo não dispara tracking do quiz. As respostas não são enviadas.
+Envie todo o conteúdo do ZIP, mantendo index.html na raiz, assets e landing em suas pastas. Esta entrega não publicou nem alterou o site hospedado.
 
-O redirecionamento de computadores brasileiros da landing foi mantido. Regras adicionais de hospedagem continuam dependendo da configuração do servidor; este ZIP não as altera. Uma regra de roteamento não pode devolver o quiz ao acessar `/landing/index.html`.
+## Tracking
 
-Verificados localmente: carregamento, fluxo, repetição do carrossel, navegação até a landing, parâmetros até os checkouts e chamadas locais dos eventos. Nos testes, serviços externos foram substituídos para não gerar eventos artificiais. Isso não confirma recebimento nas contas Meta/UTMify, eventos de compra ou integração de servidor: validar após a publicação.
+Meta Pixel e UTMify preservados. Parâmetros de campanha seguem do quiz para a landing e para os links de pagamento. Preços mantidos: R$19,90 e R$47,90. O arquivo de redirecionamento de computadores do Brasil é idêntico ao original.
 
-O resultado usa as respostas para resumir a necessidade e explicar o próximo passo. Não calcula economia, capacidade de baterias nem garante um resultado financeiro.
+## Verificação
+
+Testes locais em telas de 320, 390 e 768 pixels, rotação da tela, retorno às respostas, ciclo completo do carrossel, fotos lentas, fotos com erro e recuperação. Simulação de conexão 3G a 500 kb/s, latência de 400 ms e CPU quatro vezes mais lenta. Serviços externos de tracking foram simulados para não enviar eventos falsos. O tempo real depende da conexão, hospedagem e serviços externos.

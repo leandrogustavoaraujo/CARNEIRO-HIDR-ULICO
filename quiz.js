@@ -41,7 +41,9 @@ function render(){
       if(moving)return;
       if(q.multiple){answers[step]=Array.from($('options').querySelectorAll('input')).flatMap((el,i)=>el.checked?[i]:[]);$('continue').disabled=answers[step].length===0;}
       else{answers[step]=[index];moving=true;timer=setTimeout(next,230);}
-    });wrap.append(input,text);$('options').append(wrap);
+    });
+    if(!q.multiple)input.addEventListener('click',()=>{if(!moving){answers[step]=[index];moving=true;timer=setTimeout(next,230);}});
+    wrap.append(input,text);$('options').append(wrap);
   });
   $('continue').hidden=!q.multiple;$('continue').disabled=answers[step].length===0;
   $('back').hidden=step===0;
@@ -49,7 +51,7 @@ function render(){
 }
 function next(){
   if(!answers[step].length)return;
-  if(step<questions.length-1){step++;render();}else showResult();
+  if(step<questions.length-1){step++;render();if(step===1)loadPhoto(0);}else showResult();
 }
 function selected(i){return answers[i].map(n=>questions[i].options[n]).join(', ');}
 function showResult(){
@@ -64,30 +66,78 @@ function showResult(){
   setupCarousel();
   $('result-title').focus({preventScroll:true});window.scrollTo(0,0);
 }
-let carouselTimer, photoIndex=0, slides=[];
-function stopCarousel(){clearInterval(carouselTimer);}
-function startCarousel(){
-  stopCarousel();
-  if(slides.length>1&&!document.hidden&&!$('result-screen').hidden){carouselTimer=setInterval(()=>showPhoto(photoIndex+1),CONFIG.carouselInterval);}
+let carouselTimer, photoIndex=-1, carouselEpoch=0;
+const photos=new Map(), pendingPhotos=new Map(), failedPhotos=new Map();
+function stopCarousel(){clearTimeout(carouselTimer);carouselEpoch++;}
+function resultVisible(){return !document.hidden&&!$('result-screen').hidden;}
+function loadPhoto(index){
+  if(photos.has(index))return Promise.resolve(photos.get(index));
+  if(pendingPhotos.has(index))return pendingPhotos.get(index);
+  if(Date.now()-(failedPhotos.get(index)||0)<30000)return Promise.resolve(null);
+  const item=CONFIG.clientImages[index];
+  const promise=new Promise(resolve=>{
+    const img=new Image();let settled=false;
+    const finish=ok=>{
+      if(settled)return;settled=true;clearTimeout(deadline);img.onload=img.onerror=null;
+      pendingPhotos.delete(index);
+      if(ok){photos.set(index,img);failedPhotos.delete(index);}else{failedPhotos.set(index,Date.now());img.removeAttribute('srcset');img.removeAttribute('src');}
+      resolve(ok?img:null);
+    };
+    const deadline=setTimeout(()=>finish(false),20000);
+    img.alt=item.alt;img.width=960;img.height=960;img.hidden=true;img.decoding='async';
+    img.onload=async()=>{try{if(img.decode)await img.decode();finish(img.naturalWidth>0);}catch{finish(false);}};
+    img.onerror=()=>finish(false);
+    img.src=(window.matchMedia('(max-width: 620px)').matches?item.src.replace('.webp','-640.webp'):item.src)+'?v=3g-original-20261010';
+  });
+  pendingPhotos.set(index,promise);return promise;
 }
-function showPhoto(index){
-  if(!slides.length)return;
-  photoIndex=(index+slides.length)%slides.length;
-  slides.forEach((img,i)=>{img.hidden=i!==photoIndex;});
+async function showPhoto(index,epoch){
+  const img=await loadPhoto(index);
+  if(!img||epoch!==carouselEpoch||!resultVisible())return false;
+  // Nunca apagar a foto anterior enquanto a próxima está baixando.
+  if(!img.isConnected)$('client-slides').append(img);
+  img.hidden=false;
+  $('client-slides').querySelectorAll('img').forEach(other=>{if(other!==img)other.hidden=true;});
+  photoIndex=index;$('photo-placeholder').hidden=true;
+  return true;
+}
+function startCarousel(){
+  clearTimeout(carouselTimer);
+  if(!resultVisible()||photoIndex<0)return;
+  const epoch=carouselEpoch;
+  carouselTimer=setTimeout(async()=>{
+    const previous=photoIndex;
+    for(let offset=1;offset<CONFIG.clientImages.length;offset++){
+      const index=(previous+offset)%CONFIG.clientImages.length;
+      if(epoch!==carouselEpoch||!resultVisible())return;
+      if(await showPhoto(index,epoch))break;
+    }
+    if(epoch===carouselEpoch&&resultVisible())startCarousel();
+  },CONFIG.carouselInterval);
+  // Adiantar somente a próxima foto, sem baixar as cinco simultaneamente.
+  loadPhoto((photoIndex+1)%CONFIG.clientImages.length);
 }
 async function setupCarousel(){
-  stopCarousel();slides=[];$('client-slides').replaceChildren();$('client-result').hidden=true;$('photo-placeholder').hidden=false;
-  const loaded=await Promise.all(CONFIG.clientImages.map(item=>new Promise(resolve=>{
-    const img=new Image();img.alt=item.alt||'Contas de energia antes e depois de um cliente';img.hidden=true;img.decoding='async';
-    img.onload=()=>resolve(img);img.onerror=()=>resolve(null);img.src=item.src;
-  })));
-  slides=loaded.filter(Boolean);
-  if(!slides.length)return;
-  $('client-slides').append(...slides);$('client-result').hidden=false;$('photo-placeholder').hidden=true;
-  showPhoto(0);startCarousel();
+  stopCarousel();const epoch=carouselEpoch;
+  $('client-result').hidden=false;
+  if(photoIndex>=0){startCarousel();return;}
+  $('photo-placeholder').hidden=false;
+  $('photo-status').textContent='Carregando fotos…';$('retry-photos').hidden=true;
+  for(let index=0;index<CONFIG.clientImages.length;index++){
+    if(await showPhoto(index,epoch)){startCarousel();return;}
+    if(epoch!==carouselEpoch||!resultVisible())return;
+  }
+  $('photo-status').textContent='Não foi possível carregar as fotos. Tente novamente ou continue abaixo.';
+  $('retry-photos').hidden=false;
 }
-document.addEventListener('visibilitychange',startCarousel);
+document.addEventListener('visibilitychange',()=>{if(document.hidden)stopCarousel();else if(!$('result-screen').hidden){if(photoIndex<0)setupCarousel();else startCarousel();}});
+$('retry-photos').addEventListener('click',()=>{failedPhotos.clear();setupCarousel();});
 $('continue').addEventListener('click',next);
 $('back').addEventListener('click',()=>{if(step>0){step--;render();}});
 $('edit').addEventListener('click',()=>{step=0;render();});
 render();
+// Adianta a primeira conta enquanto a pessoa responde, depois da foto inicial.
+const introPhoto=$('first-question-photo');
+const warmFirstPhoto=()=>setTimeout(()=>loadPhoto(0),300);
+if(introPhoto.complete&&introPhoto.naturalWidth)warmFirstPhoto();
+else introPhoto.addEventListener('load',warmFirstPhoto,{once:true});
