@@ -39,7 +39,7 @@ document.querySelectorAll('.faq-item button').forEach(button => {
   const checkoutProducts = {
     'https://pay.wiapy.com/5S1r_y6eb2mL': {
       name: 'Sítio OFF GRID — Apostila',
-      value: 19.90
+      value: 9.90
     },
     'https://pay.wiapy.com/y5HEBDNZnlfJ': {
       name: 'Sítio OFF GRID — Plano Completo',
