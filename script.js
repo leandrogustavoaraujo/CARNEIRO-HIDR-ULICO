@@ -43,7 +43,7 @@ document.querySelectorAll('.faq-item button').forEach(button => {
     },
     'https://pay.wiapy.com/y5HEBDNZnlfJ': {
       name: 'Sítio OFF GRID — Plano Completo',
-      value: 47.90
+      value: 29.90
     }
   };
   const acceptedParameters = [
